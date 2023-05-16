@@ -8,22 +8,27 @@
         <link rel="stylesheet" href="style.css" />
         <script src="script.js" defer></script>
         <title>React 한번 해보조</title>
+        <!-- 폰트 링크 시작 -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap" rel="stylesheet">
+        <!-- 폰트 링크 끝 -->
     </head>
     <body>
         <div id="loading">
             <div class="spinner"></div>
         </div>
         <header>
-            <nav>
+            <nav id="nav-con">
                 <div class="logo header-logo">React 한번 해보조</div>
                 <div class="nav-link-container">
                     <ul>
-                        <li id="team"><a href="">Team</a></li>
-                        <li id="people"><a href="">People</a></li>
-                        <li id="team"><a href="">Message</a></li>
+                        <li id="team"><a onclick="scrollToSection('team')">Team</a></li>
+                        <li id="people"><a onclick="scrollToSection('sect2')">People</a></li>
+                        <li id="team"><a onclick="scrollToSection('sect3')">Message</a></li>
                     </ul>
                 </div>
             </nav>
@@ -92,6 +97,7 @@
                                 <img src="" alt="" />
                                 <img src="" alt="" />
                             </div>
+                            <div class="divider"></div>
                             <p>
                                 Lorem, ipsum dolor sit amet consectetur
                                 adipisicing elit. Ex similique nihil laudantium,
@@ -114,6 +120,7 @@
                                 <img src="" alt="" />
                                 <img src="" alt="" />
                             </div>
+                            <div class="divider"></div>
                             <p>
                                 Lorem, ipsum dolor sit amet consectetur
                                 adipisicing elit. Ex similique nihil laudantium,
@@ -136,6 +143,7 @@
                                 <img src="" alt="" />
                                 <img src="" alt="" />
                             </div>
+                            <div class="divider"></div>
                             <p>
                                 Lorem, ipsum dolor sit amet consectetur
                                 adipisicing elit. Ex similique nihil laudantium,
@@ -158,6 +166,7 @@
                                 <img src="" alt="" />
                                 <img src="" alt="" />
                             </div>
+                            <div class="divider"></div>
                             <p>
                                 Lorem, ipsum dolor sit amet consectetur
                                 adipisicing elit. Ex similique nihil laudantium,
@@ -222,6 +231,9 @@
                     </div>
                 </div>
             </section>
+            <div id="toTopBtn-con">
+                <input id="toTopBtn" type="button" value="맨 위로 가기" onclick="scrollToSection('nav-con')">
+            </div>
             <footer>
                 <div id="footer-div1">
                     <h1 class="logo footer-logo">React 한번 해보조</h1>
@@ -236,6 +248,7 @@
                         </ul>
                     </div>
                 </div>
+                
             </footer>
         </main>
         <modal1>
