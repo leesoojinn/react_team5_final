@@ -13,6 +13,9 @@
         <link href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap" rel="stylesheet">
     </head>
     <body>
+        <div id="loading">
+            <div class="spinner"></div>
+        </div>
         <header>
             <nav>
                 <div class="logo header-logo">React 한번 해보조</div>
@@ -95,7 +98,7 @@
                                 quod ea cupiditate
                             </p>
                             <div class="people-card-intro-input-con">
-                                <input type="button" value="More" />
+                                <input class="moreBtn" id="more-btn0" type="button" value="More" />
                             </div>
                         </div>
                     </div>
@@ -117,7 +120,7 @@
                                 quod ea cupiditate
                             </p>
                             <div class="people-card-intro-input-con">
-                                <input type="button" value="More" />
+                                <input class="moreBtn" id="more-btn1" type="button" value="More" />
                             </div>
                         </div>
                     </div>
@@ -139,7 +142,7 @@
                                 quod ea cupiditate
                             </p>
                             <div class="people-card-intro-input-con">
-                                <input type="button" value="More" />
+                                <input class="moreBtn" id="more-btn2" type="button" value="More" />
                             </div>
                         </div>
                     </div>
@@ -161,29 +164,7 @@
                                 quod ea cupiditate
                             </p>
                             <div class="people-card-intro-input-con">
-                                <input type="button" value="More" />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card people-card5">
-                        <img
-                            class="people-card-profile-photo"
-                            src="src/profile5.png"
-                            alt=""
-                        />
-                        <div class="people-card-intro-con">
-                            <div>
-                                <h2>Name</h2>
-                                <img src="" alt="" />
-                                <img src="" alt="" />
-                            </div>
-                            <p>
-                                Lorem, ipsum dolor sit amet consectetur
-                                adipisicing elit. Ex similique nihil laudantium,
-                                quod ea cupiditate
-                            </p>
-                            <div class="people-card-intro-input-con">
-                                <input type="button" value="More" />
+                                <input class="moreBtn" id="more-btn3" type="button" value="More" />
                             </div>
                         </div>
                     </div>
@@ -192,7 +173,7 @@
             <section id="sect3">
                 <div id="message">
                     <h1>Message</h1>
-                    <input type="button" value="작성하기" />
+                    <input id="write" type="button" value="작성하기" />
                 </div>
                 <div id="message-card-container">
                     <div class="card message-card">
@@ -239,17 +220,6 @@
                             <p class="message-card-p1">username</p>
                         </div>
                     </div>
-                    <div class="card message-card">
-                        <div class="message-card-first-div">
-                            <p class="message-card-p1">To.</p>
-                            <p class="message-card-p1">username</p>
-                        </div class="message-card-second-div">
-                        <textarea rows="5" cols="50" placeholder="example sentences, Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex similique nihil laudantium, quod ea cupiditate" readonly ></textarea>
-                        <div class="message-card-second-div">
-                            <p class="message-card-p1">From.</p>
-                            <p class="message-card-p1">username</p>
-                        </div>
-                    </div>
                 </div>
             </section>
             <footer>
@@ -268,5 +238,82 @@
                 </div>
             </footer>
         </main>
+        <modal1>
+            <div class="modal-container">
+                <div id="modal-div1">
+                    <img src="src/profile1.png" alt="">
+                    <div id="modal-div1-info-container">
+                        <h1>김환훈</h1>
+                        <div class="modal-info-input-container" id="modal-age">
+                            <label for="age">나이</label>
+                            <input type="text" name="age" id="" readonly>
+                        </div>
+                        <div class="modal-info-input-container" id="modal-address">
+                            <label for="address">사는곳</label>
+                            <input type="text" name="address" id="" readonly>
+                        </div>
+                        <div class="modal-info-input-container" id="modal-mbti">
+                            <label for="mbti">MBTI</label>
+                            <input type="text" name="mbti" id="" readonly>
+                        </div>
+                        <div class="modal-info-input-container" id="modal-hobby">
+                            <label for="hobby">취미</label>
+                            <input type="text" name="hobby" id="" readonly>
+                        </div>
+                        <div class="modal-info-input-container" id="modal-blog">
+                            <label for="blog">블로그</label>
+                            <input type="text" name="blog" id="" readonly>
+                        </div>
+                    </div>
+                </div>
+                <div id="modal-div2">
+                    <div id="modal-div2-1">
+                        <h2>장점과 단점</h2>
+                        <textarea rows="5" cols="50" placeholder="example sentences, Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex similique nihil laudantium, quod ea cupiditate" readonly ></textarea>
+                    </div>
+                    <div id="modal-div2-2">
+                        <h2>앞으로의 각오</h2>
+                        <textarea rows="5" cols="50" placeholder="example sentences, Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex similique nihil laudantium, quod ea cupiditate" readonly ></textarea>
+                    </div>
+                    <div id="modal-div2-3">
+                        <input id="people-modal-close" type="button" value="닫기">
+                    </div>
+                </div>
+            </div>
+        </modal1>
+        <modal2>
+            <div class="modal-container1">
+                <div id="modal2-div1">
+                    <div>
+                        <label for="dropdown2">선택하세요:</label>
+                        <select id="dropdown1">
+                        <option value="" disabled selected hidden>선택하세요</option>
+                        <option value="option1">옵션 1</option>
+                        <option value="option2">옵션 2</option>
+                        <option value="option3">옵션 3</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="dropdown1">선택하세요:</label>
+                        <select id="dropdown2">
+                        <option value="" disabled selected hidden>선택하세요</option>
+                        <option value="option1">옵션 1</option>
+                        <option value="option2">옵션 2</option>
+                        <option value="option3">옵션 3</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="modal2-div2">
+                    <h2>Content</h2>
+                    <textarea rows="5" cols="50" placeholder="example sentences, Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex similique nihil laudantium, quod ea cupiditate" readonly ></textarea>
+                </div>
+                <div id="modal2-div3">
+                    <input id="modal2Send" type="button" value="보내기">
+                    <input id="modal2Close" type="button" value="닫기">
+                </div>
+            </div>
+        </modal1>
+        </modal2>
+        <div class="backdrop hide"></div>
     </body>
 </html>
