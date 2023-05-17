@@ -1,10 +1,8 @@
 from flask import Flask, render_template, request, jsonify
+from pymongo import MongoClient
+from bson.objectid import ObjectId
 
 app = Flask(__name__)
-
-import requests
-
-from pymongo import MongoClient
 
 client = MongoClient(
     "mongodb+srv://khh:LwE8KlTJpoo7Peua@test.ohpap5n.mongodb.net/?retryWrites=true&w=majority"
@@ -37,6 +35,9 @@ def user_post():
 def userinfo_get():
     users = list(db.userinfo.find({}, {"_id": False}))
     return jsonify({"users": users})
+
+
+# 수정하기
 
 
 if __name__ == "__main__":

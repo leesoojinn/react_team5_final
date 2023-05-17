@@ -8,6 +8,7 @@ const modal2Send = document.getElementById('modal2Send'); //모달2 보내기 �
 const modal2Close = document.getElementById('modal2Close'); //모달2 닫기 요소 등록
 const moreBtn = document.querySelectorAll('.moreBtn'); //people에 more버튼들 요소 등록
 const footer = document.querySelector('footer'); //footer 요소 등록
+const modal2Edit = document.getElementById('modal2Edit'); // modal2 수정하기 버튼 요소 등록
 //
 // smooth scroll
 function scrollToSection(sectionId) {
