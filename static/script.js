@@ -21,6 +21,20 @@ nav.addEventListener('mousedown', function (event) {
 footer.addEventListener('mousedown', function (event) {
     event.preventDefault();
 });
+const modal1photo = document.querySelector('#modal1-img');
+modal1photo.addEventListener('mousedown', function (event) {
+    event.preventDefault();
+});
+const peoplePhoto = document.querySelectorAll('.people-card-profile-photo');
+peoplePhoto.forEach((photo) => {
+    photo.addEventListener('mousedown', (e) => {
+        e.preventDefault();
+    });
+});
+const modal1con = document.querySelector('.modal-container');
+modal1con.addEventListener('mousedown', function (event) {
+    event.preventDefault();
+});
 // 로딩 화면 표시 함수
 function showLoading() {
     document.getElementById('loading').style.display = 'flex';

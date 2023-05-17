@@ -6,7 +6,9 @@
 p,
 h1,
 h2,
-h3 {
+h3,
+input,
+textarea {
     cursor: default;
 }
 /* 스크롤 자연스럽게 */
