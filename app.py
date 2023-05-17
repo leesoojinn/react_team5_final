@@ -17,14 +17,14 @@ def home():
 
 @app.route("/userinfo", methods=["POST"])
 def user_post():
-    dropdown1 = request.form.get("dropdown1")
-    dropdown2 = request.form.get("dropdown2")
-    messageTextArea = request.form.get("messageTextArea")
+    dropdown1 = request.form.get("to")
+    dropdown2 = request.form.get("from")
+    messageTextArea = request.form.get("content")
 
     doc = {
-        "dropdown1": dropdown1,
-        "dropdown2": dropdown2,
-        "messageTextArea": messageTextArea,
+        "to": dropdown1,
+        "from": dropdown2,
+        "content": messageTextArea,
     }
     db.userinfo.insert_one(doc)
 
@@ -33,11 +33,23 @@ def user_post():
 
 @app.route("/userinfo", methods=["GET"])
 def userinfo_get():
-    users = list(db.userinfo.find({}, {"_id": False}))
+    users = list(
+        db.userinfo.find(
+            {},
+            {"_id": False},
+        )
+    )
     return jsonify({"users": users})
 
 
-# 수정하기
+@app.route("/intro")
+def get_user_introduction():
+    intro = db["user introduction"].find(
+        {},
+        {"_id": False},
+    )
+    intro_list = list(intro)  # MongoDB 커서를 리스트로 변환
+    return jsonify({"intro": intro_list})
 
 
 if __name__ == "__main__":
