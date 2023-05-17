@@ -6,10 +6,9 @@ const write = document.getElementById('write'); //작성하기 버튼 등록
 const modal2 = document.querySelector('modal2'); //모달2 요소 등록
 const modal2Send = document.getElementById('modal2Send'); //모달2 보내기 요소 등록
 const modal2Close = document.getElementById('modal2Close'); //모달2 닫기 요소 등록
-const moreBtn = document.querySelectorAll('.moreBtn'); //people에 more버튼들 요소 등록
 const footer = document.querySelector('footer'); //footer 요소 등록
-const modal2Edit = document.getElementById('modal2Edit'); // modal2 수정하기 버튼 요소 등록
 //
+
 // smooth scroll
 function scrollToSection(sectionId) {
     const section = document.getElementById(sectionId);
@@ -31,17 +30,12 @@ function showLoading() {
 function hideLoading() {
     setTimeout(() => {
         document.getElementById('loading').style.display = 'none';
-    }, 1000);
+    }, 300);
     modal.classList.toggle('hide');
     modal2.classList.toggle('hide');
 }
 // 페이지 로딩이 완료되면 로딩 화면 숨김
 window.addEventListener('load', hideLoading);
-
-//people에서 more 클릭 하면 모달1 버튼나오게 하기 함수
-moreBtn.forEach((btns) => {
-    btns.addEventListener('click', modal1open);
-});
 
 //모달1 열기 함수
 function modal1open() {
@@ -99,17 +93,19 @@ function listing() {
             let dropdown2 = document.getElementById('dropdown2').value;
             let messageTextArea =
                 document.getElementById('messageTextArea').textContent;
-            console.log(userData);
+            // userData의 첫번째 요소는 건너뛰기 (admin password)
             userData.forEach((element) => {
-                console.log(element);
-                dropdown1 = element.dropdown1;
-                dropdown2 = element.dropdown2;
-                messageTextArea = element.messageTextArea;
+                dropdown1 = element.to;
+                dropdown2 = element.from;
+                messageTextArea = element.content;
                 $('#message-card-container').append(`
                 <div class="card message-card">
                 <div class="message-card-first-div">
-                    <p class="message-card-p1">To.</p>
-                    <p class="message-card-p1">${dropdown1}</p>
+                    <p class="message-card-p1">To. ${dropdown1}</p>
+                    <div>
+                        <input class="modal2Edit" type="button" value="수정">
+                        <input class="modal2Delete" type="button" value="삭제">
+                    </div>
                 </div>
                 <textarea rows="5" cols="50" placeholder="example sentences, Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex similique nihil laudantium, quod ea cupiditate" readonly >${messageTextArea}</textarea>
                 <div class="message-card-second-div">
@@ -128,9 +124,10 @@ function posting() {
     let messageTextArea = document.getElementById('messageTextArea').value;
 
     let formData = new FormData();
-    formData.append('dropdown1', dropdown1);
-    formData.append('dropdown2', dropdown2);
-    formData.append('messageTextArea', messageTextArea);
+    formData.append('to', dropdown1);
+    formData.append('from', dropdown2);
+    formData.append('content', messageTextArea);
+
     if (dropdown1 === '' || dropdown2 === '') {
         alert('수신자와 발신자를 확인하세요.');
         return undefined;
@@ -152,3 +149,119 @@ function posting() {
             messageTextArea = '';
         });
 }
+
+//people에서 more 클릭 하면 모달1 버튼나오게 하기 함수
+const moreBtn0 = document.getElementById('more-btn0');
+const moreBtn1 = document.getElementById('more-btn1');
+const moreBtn2 = document.getElementById('more-btn2');
+const moreBtn3 = document.getElementById('more-btn3');
+
+// 모달1 GET 함수
+function modal1Get0() {
+    document.getElementById('loading').style.display = 'flex';
+    setTimeout(() => {
+        document.getElementById('loading').style.display = 'none';
+    }, 500);
+    modal.classList.toggle('hide'); // 모달1 창 보이게하기
+    backdrop.classList.toggle('hide'); // 어두운 배경화면 보이게 하기
+    modal.style.position = 'relative'; // 모달1 창을 backdrop 위에 위치시키기
+    modal.classList.add('lightbox-fade-in'); // fade in 효과 주기
+    fetch('/intro')
+        .then((res) => res.json())
+        .then((data) => {
+            console.log(data.intro[0]);
+            const userIntro = data.intro[0];
+            document.getElementById('modal1-img').src = userIntro.photo;
+            document.getElementById('modal1-name').value = userIntro.name;
+            document.getElementById('modal1-age').value = userIntro.age;
+            document.getElementById('modal1-address').value = userIntro.address;
+            document.getElementById('modal1-MBTI').value = userIntro.MBTI;
+            document.getElementById('modal1-hobby').value = userIntro.hobby;
+            document.getElementById('modal1-blog').value = userIntro.blog;
+            document.getElementById('modal1-s&w').value = userIntro['s&w'];
+            document.getElementById('modal1-resolve').value = userIntro.resolve;
+        });
+}
+
+function modal1Get1() {
+    document.getElementById('loading').style.display = 'flex';
+    setTimeout(() => {
+        document.getElementById('loading').style.display = 'none';
+    }, 500);
+    modal.classList.toggle('hide'); // 모달1 창 보이게하기
+    backdrop.classList.toggle('hide'); // 어두운 배경화면 보이게 하기
+    modal.style.position = 'relative'; // 모달1 창을 backdrop 위에 위치시키기
+    modal.classList.add('lightbox-fade-in'); // fade in 효과 주기
+    fetch('/intro')
+        .then((res) => res.json())
+        .then((data) => {
+            console.log(data.intro[1]);
+            const userIntro = data.intro[1];
+            document.getElementById('modal1-img').src = userIntro.photo;
+            document.getElementById('modal1-name').value = userIntro.name;
+            document.getElementById('modal1-age').value = userIntro.age;
+            document.getElementById('modal1-address').value = userIntro.address;
+            document.getElementById('modal1-MBTI').value = userIntro.MBTI;
+            document.getElementById('modal1-hobby').value = userIntro.hobby;
+            document.getElementById('modal1-blog').value = userIntro.blog;
+            document.getElementById('modal1-s&w').value = userIntro['s&w'];
+            document.getElementById('modal1-resolve').value = userIntro.resolve;
+        });
+}
+
+function modal1Get2() {
+    document.getElementById('loading').style.display = 'flex';
+    setTimeout(() => {
+        document.getElementById('loading').style.display = 'none';
+    }, 500);
+    modal.classList.toggle('hide'); // 모달1 창 보이게하기
+    backdrop.classList.toggle('hide'); // 어두운 배경화면 보이게 하기
+    modal.style.position = 'relative'; // 모달1 창을 backdrop 위에 위치시키기
+    modal.classList.add('lightbox-fade-in'); // fade in 효과 주기
+    fetch('/intro')
+        .then((res) => res.json())
+        .then((data) => {
+            console.log(data.intro[2]);
+            const userIntro = data.intro[2];
+            document.getElementById('modal1-img').src = userIntro.photo;
+            document.getElementById('modal1-name').value = userIntro.name;
+            document.getElementById('modal1-age').value = userIntro.age;
+            document.getElementById('modal1-address').value = userIntro.address;
+            document.getElementById('modal1-MBTI').value = userIntro.MBTI;
+            document.getElementById('modal1-hobby').value = userIntro.hobby;
+            document.getElementById('modal1-blog').value = userIntro.blog;
+            document.getElementById('modal1-s&w').value = userIntro['s&w'];
+            document.getElementById('modal1-resolve').value = userIntro.resolve;
+        });
+}
+
+function modal1Get3() {
+    document.getElementById('loading').style.display = 'flex';
+    setTimeout(() => {
+        document.getElementById('loading').style.display = 'none';
+    }, 500);
+    modal.classList.toggle('hide'); // 모달1 창 보이게하기
+    backdrop.classList.toggle('hide'); // 어두운 배경화면 보이게 하기
+    modal.style.position = 'relative'; // 모달1 창을 backdrop 위에 위치시키기
+    modal.classList.add('lightbox-fade-in'); // fade in 효과 주기
+    fetch('/intro')
+        .then((res) => res.json())
+        .then((data) => {
+            console.log(data.intro[3]);
+            const userIntro = data.intro[3];
+            document.getElementById('modal1-img').src = userIntro.photo;
+            document.getElementById('modal1-name').value = userIntro.name;
+            document.getElementById('modal1-age').value = userIntro.age;
+            document.getElementById('modal1-address').value = userIntro.address;
+            document.getElementById('modal1-MBTI').value = userIntro.MBTI;
+            document.getElementById('modal1-hobby').value = userIntro.hobby;
+            document.getElementById('modal1-blog').value = userIntro.blog;
+            document.getElementById('modal1-s&w').value = userIntro['s&w'];
+            document.getElementById('modal1-resolve').value = userIntro.resolve;
+        });
+}
+
+moreBtn0.addEventListener('click', modal1Get0);
+moreBtn1.addEventListener('click', modal1Get1);
+moreBtn2.addEventListener('click', modal1Get2);
+moreBtn3.addEventListener('click', modal1Get3);

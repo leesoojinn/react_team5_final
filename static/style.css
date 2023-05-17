@@ -3,7 +3,12 @@
     font-family: 'Nanum Gothic', -apple-system, 'system-ui', Roboto,
         'Helvetica Neue', sans-serif;
 }
-
+p,
+h1,
+h2,
+h3 {
+    cursor: default;
+}
 /* 스크롤 자연스럽게 */
 html {
     scroll-behavior: smooth;
@@ -25,7 +30,7 @@ html {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(51, 51, 51, 0.9);
+    background-color: rgba(255, 255, 255, 0.8);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -129,6 +134,9 @@ nav a {
     position: absolute;
     right: 10%;
 }
+.nav-link-container a {
+    cursor: pointer;
+}
 
 /* main 시작 */
 .main-front {
@@ -224,7 +232,8 @@ nav a {
 }
 .card {
     width: 30%;
-    min-width: 250px;
+    min-width: 275px;
+    max-width: 290px;
     -webkit-box-shadow: 3px 2px 10px 0px rgba(166, 166, 166, 1);
     -moz-box-shadow: 3px 2px 10px 0px rgba(166, 166, 166, 1);
     box-shadow: 3px 2px 10px 0px rgba(166, 166, 166, 1);
@@ -235,6 +244,7 @@ nav a {
     width: 100%;
     border-radius: 12px 12px 0 0;
     padding-bottom: 5px;
+    height: 330px;
 }
 
 .people-card-div2 {
@@ -250,11 +260,12 @@ nav a {
 }
 .people-card-intro-con h2 {
     padding-left: 5px;
+    font-size: 1.1rem;
 }
 .people-card-intro-con > p {
-    padding-bottom: 10px;
-    padding-left: 5px;
+    margin: 0 10px 10px 10px;
     line-height: 1.1;
+    font-size: 0.9rem;
 }
 
 .people-card-intro-input-con {
@@ -353,9 +364,21 @@ nav a {
 }
 
 .message-card-first-div {
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
 }
+/* 수정, 삭제 버튼 스타일 */
+.message-card-first-div input {
+    background: white;
+    border: 1px #222 solid;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.message-card-first-div input:hover {
+    background: #e6e6e6;
+}
+
 .message-card-second-div {
     justify-content: flex-end;
 }
@@ -426,6 +449,7 @@ footer {
     font-size: 1.1rem;
     font-family: 'Nanum Brush Script';
     color: #222;
+    cursor: default;
 }
 
 /* People 모달 창 스타일 */
@@ -434,6 +458,9 @@ modal1 {
     justify-content: center;
     align-items: center;
     z-index: 10;
+}
+#modal1-img {
+    max-width: 250px;
 }
 
 .modal-container {
@@ -486,6 +513,15 @@ modal1 {
 #modal-div1-info-container input {
     width: 70%;
     margin-right: 20px;
+    border-radius: 5px;
+    border: none;
+    -webkit-box-shadow: 1px 2px 3px 0px rgba(166, 166, 166, 1);
+    -moz-box-shadow: 1px 2px 3px 0px rgba(166, 166, 166, 1);
+    box-shadow: 1px 2px 3px 0px rgba(166, 166, 166, 1);
+    padding: 5px 0;
+    text-align: center;
+    color: #222;
+    vertical-align: middle;
 }
 
 #modal-div1-info-container h1 {
@@ -591,7 +627,7 @@ modal2 {
     z-index: 10;
 }
 .modal-container1 {
-    max-width: 700px;
+    max-width: 600px;
     overflow: hidden;
     height: 30%;
     position: fixed;
@@ -662,6 +698,15 @@ modal2 {
 
 #modal2-div3 input:hover {
     background: #fafafa;
+}
+
+#password-container {
+    display: flex;
+    justify-content: center;
+}
+
+#password-container :nth-child(1) {
+    padding-right: 10px;
 }
 
 /* 모달2 미디어 쿼리 */
