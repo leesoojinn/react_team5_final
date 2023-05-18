@@ -4,22 +4,37 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <!-- <link rel="stylesheet" href="reset.css" />
-        <link rel="stylesheet" href="style.css" />
-        <script src="script.js" defer></script> -->
-
-        <link rel="stylesheet" href="{{ url_for('static', filename='reset.css') }}" />
-        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
-        <script defer src="{{ url_for('static', filename='script.js') }}"></script>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="{{ url_for('static', filename='reset.css') }}"
+        />
+        <link
+            rel="stylesheet"
+            href="{{ url_for('static', filename='style.css') }}"
+        />
+        <script
+            defer
+            src="{{ url_for('static', filename='script.js') }}"
+        ></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <title>React 한번 해보조</title>
         <!-- 폰트 링크 시작 -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap" rel="stylesheet">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
         <!-- 폰트 링크 끝 -->
     </head>
     <body>
@@ -28,63 +43,98 @@
         </div>
         <header>
             <nav id="nav-con">
-                <div class="logo header-logo">React 한번 해보조</div>
+                <img
+                    id="logo"
+                    src="{{url_for('static', filename='src/logo4.png') }}"
+                    height="50px"
+                    onclick="scrollToSection('sect1')"
+                />
                 <div class="nav-link-container">
                     <ul>
-                        <li id="team"><a onclick="scrollToSection('team')">Team</a></li>
-                        <li id="people"><a onclick="scrollToSection('sect2')">People</a></li>
-                        <li id="team"><a onclick="scrollToSection('sect3')">Message</a></li>
+                        <li id="team" class="focus n-team">
+                            <a onclick="scrollToSection('team')">Team</a>
+                        </li>
+                        <li id="people" class="n-people">
+                            <a onclick="scrollToSection('sect2')">People</a>
+                        </li>
+                        <li id="team" class="n-message">
+                            <a onclick="scrollToSection('sect3')">Message</a>
+                        </li>
                     </ul>
                 </div>
             </nav>
         </header>
         <main>
             <section id="sect1">
-                <div class="main-front front1">
-                    <div>
-                        <h1 class="main-front-h1-big">
-                            Let us introduce our team
-                        </h1>
+                <div id="carouselExample" class="carousel slide">
+                    <div class="carousel-inner">
+                        <div class="main-front front1 carousel-item active">
+                            <div class="slide">
+                                <h1 class="main-front-h1-big">
+                                    안녕하세요,<br />
+                                    매일매일 발전하는<br />
+                                    React 한번 해보조입니다!
+                                </h1>
+                            </div>
+                        </div>
+                        <div class="main-front front2 carousel-item">
+                            <div class="slide">
+                                <h1 class="main-front-h1-big">Who We Are</h1>
+                                <p>
+                                    잘하는 걸로도 모자라 아낌없이 지식을
+                                    공유해준 천재만재 김환훈, 항상 늦은 시간까지
+                                    남아 완벽한 코드를 만든 열정천재 원유길,
+                                    깔끔하게 정리한 파일로 문제를 해결해준
+                                    정리천재 이수진, 분위기 메이커 이진솔로
+                                    이루어진 우리조는 완벽한 육각형 팀입니다.
+                                    서로 어려운 부분이 있으면 함께 해결하고 좋은
+                                    정보나 지식은 공유하며 일주일간 완벽하게
+                                    합을 맞췄습니다. 다음에도 같이 팀하고싶다는
+                                    말이 나왔을정도면 더 이상의 설명은
+                                    필요없겠죠?
+                                </p>
+                            </div>
+                        </div>
+                        <div class="main-front front3 carousel-item">
+                            <div class="slide">
+                                <h1 class="main-front-h1-big">Our Goal</h1>
+                                <p>
+                                    팀소개 페이지 프로젝트 목표로는 좋은
+                                    분위기와 만족스러운 결과물입니다. 둘 중에
+                                    하나라도 없으면 아쉬움이 남을수밖에
+                                    없으니까요. 돌아보니 두마리의 토끼를 잡는데
+                                    성공한 것 같습니다. 남은 기간동안 포기하지
+                                    않고 열심히 배워서 좋은 회사, 좋은 연봉으로
+                                    취업한 뒤 다함께 모여 밥 한끼하면서 지금을
+                                    돌아보고 싶습니다. React 한번해보조 화이팅!
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                    <div>
-                        <p>
-                            Lorem losum dolor sit amet, consectetur adipiscina
-                            elita vulla molestie tacilisis eros in iaculis. Sed
-                            consequat frinailla tellus, non suscipit uma
-                            volutpat id, sed ac vehicula tortor eget moncus
-                            dunc. in vehiculd sollicituain ante, quis taucibus
-                            tortor accumsan eget
-                        </p>
-                    </div>
-                </div>
-                <div class="main-front front2">
-                    <div><h1 class="main-front-h1-big">Who We Are</h1></div>
-                    <div>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elita Nulla molestie facilisis eros in iaculis. Sed
-                            consequat frinalla tellus, non suscioit urna
-                            volutpat id, sed ac vehicula tortor eset rhoncus
-                            nunc. In vehicula sollicitudin ante, quis faucious
-                            tortor accumsan eget.
-                        </p>
-                    </div>
-                </div>
-                <div class="main-front-left front3">
-                    <div id="main-front-left-div1">
-                        <h2>Our Goal</h2>
-                        <h3>Our goal is to be front-end developers!</h3>
-                    </div>
-                    <div>
-                        <p id="main-front-left-p">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elita Nulla molestie facilisis eros in iaculis. Sed
-                            consequat frinalla tellus, non suscioit urna
-                            volutpat id, sed ac vehicula tortor eset rhoncus
-                            nunc. In vehicula sollicitudin ante, quis faucious
-                            tortor accumsan eget.
-                        </p>
-                    </div>
+                    <button
+                        class="carousel-control-prev"
+                        type="button"
+                        data-bs-target="#carouselExample"
+                        data-bs-slide="prev"
+                    >
+                        <span
+                            class="carousel-control-prev-icon"
+                            aria-hidden="true"
+                        ></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button
+                        class="carousel-control-next"
+                        type="button"
+                        data-bs-target="#carouselExample"
+                        data-bs-slide="next"
+                    >
+                        <span
+                            class="carousel-control-next-icon"
+                            aria-hidden="true"
+                        ></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
                 </div>
             </section>
             <section id="sect2">
@@ -103,11 +153,14 @@
                                 <img src="" alt="" />
                             </div>
                             <div class="divider"></div>
-                            <p>
-                                안녕하세요 김환훈입니다. 제의 소개를 보시려면 버튼을 눌러주세요.
-                            </p>
+                            <p>Carpe diem, 매 순간을 즐기자!</p>
                             <div class="people-card-intro-input-con">
-                                <input class="moreBtn" id="more-btn0" type="button" value="More" />
+                                <input
+                                    class="moreBtn"
+                                    id="more-btn0"
+                                    type="button"
+                                    value="More"
+                                />
                             </div>
                         </div>
                     </div>
@@ -125,10 +178,16 @@
                             </div>
                             <div class="divider"></div>
                             <p>
-                                안녕하세요 이진솔입니다. 제의 소개를 보시려면 버튼을 눌러주세요.
+                                When life gives you lemons,<br />
+                                make lemonade.
                             </p>
                             <div class="people-card-intro-input-con">
-                                <input class="moreBtn" id="more-btn1" type="button" value="More" />
+                                <input
+                                    class="moreBtn"
+                                    id="more-btn1"
+                                    type="button"
+                                    value="More"
+                                />
                             </div>
                         </div>
                     </div>
@@ -145,11 +204,14 @@
                                 <img src="" alt="" />
                             </div>
                             <div class="divider"></div>
-                            <p>
-                                안녕하세요 원유길입니다. 제의 소개를 보시려면 버튼을 눌러주세요.
-                            </p>
+                            <p>할 일을 미루지 말고 주말은 푹 쉬자</p>
                             <div class="people-card-intro-input-con">
-                                <input class="moreBtn" id="more-btn2" type="button" value="More" />
+                                <input
+                                    class="moreBtn"
+                                    id="more-btn2"
+                                    type="button"
+                                    value="More"
+                                />
                             </div>
                         </div>
                     </div>
@@ -166,11 +228,14 @@
                                 <img src="" alt="" />
                             </div>
                             <div class="divider"></div>
-                            <p>
-                                안녕하세요 이수진입니다. 제의 소개를 보시려면 버튼을 눌러주세요.
-                            </p>
+                            <p>Believe in youself</p>
                             <div class="people-card-intro-input-con">
-                                <input class="moreBtn" id="more-btn3" type="button" value="More" />
+                                <input
+                                    class="moreBtn"
+                                    id="more-btn3"
+                                    type="button"
+                                    value="More"
+                                />
                             </div>
                         </div>
                     </div>
@@ -181,12 +246,14 @@
                     <h1>Message</h1>
                     <input id="write" type="button" value="작성하기" />
                 </div>
-                <div id="message-card-container">
-                    
-                </div>
+                <div id="message-card-container"></div>
             </section>
-            <div id="toTopBtn-con">
-                <input id="toTopBtn" type="button" value="맨 위로 가기" onclick="scrollToSection('nav-con')">
+            <div id="toTopBtn-con" onclick="scrollToSection('sect1')">
+                <img
+                    id="toTopBtn"
+                    src="{{ url_for('static', filename='src/arrow-up.png') }}"
+                    alt=""
+                />
             </div>
             <footer>
                 <div id="footer-div1">
@@ -196,54 +263,111 @@
                 <div>
                     <div class="nav-link-container">
                         <ul>
-                            <li id="team1"><a onclick="scrollToSection('team')">Team</a></li>
-                            <li id="people2"><a onclick="scrollToSection('sect2')">People</a></li>
-                            <li id="team3"><a onclick="scrollToSection('sect3')">Message</a></li>
+                            <li id="team1">
+                                <a onclick="scrollToSection('sect1')">Team</a>
+                            </li>
+                            <li id="people2">
+                                <a onclick="scrollToSection('sect2')">People</a>
+                            </li>
+                            <li id="team3">
+                                <a onclick="scrollToSection('sect3')"
+                                    >Message</a
+                                >
+                            </li>
                         </ul>
                     </div>
                 </div>
-                
             </footer>
         </main>
         <modal1>
             <div class="modal-container">
                 <div id="modal-div1">
-                    <img id="modal1-img" src="">
+                    <img id="modal1-img" src="" />
                     <div id="modal-div1-info-container">
-                        <h1 id="modal1-name">김환훈</h1>
+                        <h1 id="modal1-name"></h1>
                         <div class="modal-info-input-container" id="modal-age">
                             <label for="age">나이</label>
-                            <input id="modal1-age" type="text" name="age" id="" readonly>
+                            <input
+                                id="modal1-age"
+                                type="text"
+                                name="age"
+                                id=""
+                                readonly
+                            />
                         </div>
-                        <div class="modal-info-input-container" id="modal-address">
+                        <div
+                            class="modal-info-input-container"
+                            id="modal-address"
+                        >
                             <label for="address">사는곳</label>
-                            <input id="modal1-address" type="text" name="address" id="" readonly>
+                            <input
+                                id="modal1-address"
+                                type="text"
+                                name="address"
+                                id=""
+                                readonly
+                            />
                         </div>
                         <div class="modal-info-input-container" id="modal-mbti">
                             <label for="mbti">MBTI</label>
-                            <input id="modal1-MBTI" type="text" name="mbti" id="" readonly>
+                            <input
+                                id="modal1-MBTI"
+                                type="text"
+                                name="mbti"
+                                id=""
+                                readonly
+                            />
                         </div>
-                        <div class="modal-info-input-container" id="modal-hobby">
+                        <div
+                            class="modal-info-input-container"
+                            id="modal-hobby"
+                        >
                             <label for="hobby">취미</label>
-                            <input id="modal1-hobby" type="text" name="hobby" id="" readonly>
+                            <input
+                                id="modal1-hobby"
+                                type="text"
+                                name="hobby"
+                                id=""
+                                readonly
+                            />
                         </div>
                         <div class="modal-info-input-container" id="modal-blog">
                             <label for="blog">블로그</label>
-                            <input id="modal1-blog" type="text" name="blog" id="" readonly>
+                            <input
+                                id="modal1-blog"
+                                type="text"
+                                name="blog"
+                                id=""
+                                readonly
+                            />
                         </div>
                     </div>
                 </div>
                 <div id="modal-div2">
                     <div id="modal-div2-1">
                         <h2>장점과 단점</h2>
-                        <textarea id="modal1-s&w" rows="5" cols="50" readonly ></textarea>
+                        <textarea
+                            id="modal1-s&w"
+                            rows="5"
+                            cols="50"
+                            readonly
+                        ></textarea>
                     </div>
                     <div id="modal-div2-2">
                         <h2>앞으로의 각오</h2>
-                        <textarea id="modal1-resolve" rows="5" cols="50" readonly ></textarea>
+                        <textarea
+                            id="modal1-resolve"
+                            rows="5"
+                            cols="50"
+                            readonly
+                        ></textarea>
                     </div>
                     <div id="modal-div2-3">
-                        <input id="people-modal-close" type="button" value="닫기">
+                        <input
+                            id="people-modal-close"
+                            type="button"
+                            value="닫기"
+                        />
                     </div>
                 </div>
             </div>
@@ -251,38 +375,58 @@
         <modal2>
             <div class="modal-container1">
                 <div id="modal2-div1">
-                    <div>
+                    <div class="modal2-div1-div">
                         <label for="dropdown2">누구에게 보낼까요?</label>
                         <select id="dropdown1">
-                        <option value="" disabled selected hidden>선택하세요</option>
-                        <option value="김환훈">김환훈</option>
-                        <option value="이진솔">이진솔</option>
-                        <option value="원유길">원유길</option>
-                        <option value="이수진">이수진</option>
+                            <option value="" disabled selected hidden>
+                                선택하세요
+                            </option>
+                            <option value="김환훈">김환훈</option>
+                            <option value="이진솔">이진솔</option>
+                            <option value="원유길">원유길</option>
+                            <option value="이수진">이수진</option>
                         </select>
                     </div>
-                    <div>
+                    <div class="modal2-div1-div">
                         <label for="dropdown1">나는 누구?</label>
                         <select id="dropdown2">
-                        <option value="" disabled selected hidden>선택하세요</option>
-                        <option value="김환훈">김환훈</option>
-                        <option value="이진솔">이진솔</option>
-                        <option value="원유길">원유길</option>
-                        <option value="이수진">이수진</option>
+                            <option value="" disabled selected hidden>
+                                선택하세요
+                            </option>
+                            <option value="김환훈">김환훈</option>
+                            <option value="이진솔">이진솔</option>
+                            <option value="원유길">원유길</option>
+                            <option value="이수진">이수진</option>
                         </select>
                     </div>
                 </div>
                 <div id="modal2-div2">
-                    <h2>Content</h2>
-                    <textarea id="messageTextArea" rows="5" cols="50" placeholder="메세지를 입력해주세요."></textarea>
+                    <textarea
+                        id="messageTextArea"
+                        rows="5"
+                        cols="50"
+                        placeholder="메세지를 입력해주세요"
+                    ></textarea>
                 </div>
+                <input
+                    id="passwordInput"
+                    type="password"
+                    placeholder="패스워드 입력하세요"
+                />
                 <div id="modal2-div3">
-                    <input id="modal2Send" type="button" value="보내기">
-                    <input id="modal2Close" type="button" value="닫기">
+                    <input id="modal2Send" type="button" value="보내기" />
+                    <input id="modal2Close" type="button" value="닫기" />
                 </div>
             </div>
-        </modal1>
         </modal2>
+        <!--  -->
+
+        <!--  -->
         <div class="backdrop hide"></div>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+            crossorigin="anonymous"
+        ></script>
     </body>
 </html>
