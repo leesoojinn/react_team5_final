@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+	<!-- Test to see conflict -->
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -93,20 +94,18 @@
                     <div class="card people-card1">
                         <img
                             class="people-card-profile-photo"
-                            src="{{url_for('static', filename='src/profile1.png') }}"
+                            src="{{url_for('static', filename='src/김환훈.jpeg') }}"
                             alt=""
                         />
                         <div class="people-card-intro-con">
                             <div>
-                                <h2>Name</h2>
+                                <h2>김환훈</h2>
                                 <img src="" alt="" />
                                 <img src="" alt="" />
                             </div>
                             <div class="divider"></div>
                             <p>
-                                Lorem, ipsum dolor sit amet consectetur
-                                adipisicing elit. Ex similique nihil laudantium,
-                                quod ea cupiditate
+                                안녕하세요 김환훈입니다. 제의 소개를 보시려면 버튼을 눌러주세요.
                             </p>
                             <div class="people-card-intro-input-con">
                                 <input class="moreBtn" id="more-btn0" type="button" value="More" />
@@ -116,20 +115,18 @@
                     <div class="card people-card2">
                         <img
                             class="people-card-profile-photo"
-                            src="{{url_for('static', filename='src/profile2.png') }}"
+                            src="{{url_for('static', filename='src/이진솔.jpeg') }}"
                             alt=""
                         />
                         <div class="people-card-intro-con">
                             <div>
-                                <h2>Name</h2>
+                                <h2>이진솔</h2>
                                 <img src="" alt="" />
                                 <img src="" alt="" />
                             </div>
                             <div class="divider"></div>
                             <p>
-                                Lorem, ipsum dolor sit amet consectetur
-                                adipisicing elit. Ex similique nihil laudantium,
-                                quod ea cupiditate
+                                안녕하세요 이진솔입니다. 제의 소개를 보시려면 버튼을 눌러주세요.
                             </p>
                             <div class="people-card-intro-input-con">
                                 <input class="moreBtn" id="more-btn1" type="button" value="More" />
@@ -139,20 +136,18 @@
                     <div class="card people-card3">
                         <img
                             class="people-card-profile-photo"
-                            src="{{url_for('static', filename='src/profile3.png') }}"
+                            src="{{url_for('static', filename='src/원유길.jpg') }}"
                             alt=""
                         />
                         <div class="people-card-intro-con">
                             <div>
-                                <h2>Name</h2>
+                                <h2>원유길</h2>
                                 <img src="" alt="" />
                                 <img src="" alt="" />
                             </div>
                             <div class="divider"></div>
                             <p>
-                                Lorem, ipsum dolor sit amet consectetur
-                                adipisicing elit. Ex similique nihil laudantium,
-                                quod ea cupiditate
+                                안녕하세요 원유길입니다. 제의 소개를 보시려면 버튼을 눌러주세요.
                             </p>
                             <div class="people-card-intro-input-con">
                                 <input class="moreBtn" id="more-btn2" type="button" value="More" />
@@ -162,20 +157,18 @@
                     <div class="card people-card4">
                         <img
                             class="people-card-profile-photo"
-                            src="{{url_for('static', filename='src/profile4.png') }}"
+                            src="{{url_for('static', filename='src/이수진.jpeg') }}"
                             alt=""
                         />
                         <div class="people-card-intro-con">
                             <div>
-                                <h2>Name</h2>
+                                <h2>이수진</h2>
                                 <img src="" alt="" />
                                 <img src="" alt="" />
                             </div>
                             <div class="divider"></div>
                             <p>
-                                Lorem, ipsum dolor sit amet consectetur
-                                adipisicing elit. Ex similique nihil laudantium,
-                                quod ea cupiditate
+                                안녕하세요 이수진입니다. 제의 소개를 보시려면 버튼을 눌러주세요.
                             </p>
                             <div class="people-card-intro-input-con">
                                 <input class="moreBtn" id="more-btn3" type="button" value="More" />
@@ -204,9 +197,9 @@
                 <div>
                     <div class="nav-link-container">
                         <ul>
-                            <li id="team"><a href="">Team</a></li>
-                            <li id="people"><a href="">People</a></li>
-                            <li id="team"><a href="">Message</a></li>
+                            <li id="team1"><a onclick="scrollToSection('team')">Team</a></li>
+                            <li id="people2"><a onclick="scrollToSection('sect2')">People</a></li>
+                            <li id="team3"><a onclick="scrollToSection('sect3')">Message</a></li>
                         </ul>
                     </div>
                 </div>
@@ -216,39 +209,39 @@
         <modal1>
             <div class="modal-container">
                 <div id="modal-div1">
-                    <img src="{{url_for('static', filename='src/profile4.png') }}" alt="">
+                    <img id="modal1-img" src="">
                     <div id="modal-div1-info-container">
-                        <h1>김환훈</h1>
+                        <h1 id="modal1-name">김환훈</h1>
                         <div class="modal-info-input-container" id="modal-age">
                             <label for="age">나이</label>
-                            <input type="text" name="age" id="" readonly>
+                            <input id="modal1-age" type="text" name="age" id="" readonly>
                         </div>
                         <div class="modal-info-input-container" id="modal-address">
                             <label for="address">사는곳</label>
-                            <input type="text" name="address" id="" readonly>
+                            <input id="modal1-address" type="text" name="address" id="" readonly>
                         </div>
                         <div class="modal-info-input-container" id="modal-mbti">
                             <label for="mbti">MBTI</label>
-                            <input type="text" name="mbti" id="" readonly>
+                            <input id="modal1-MBTI" type="text" name="mbti" id="" readonly>
                         </div>
                         <div class="modal-info-input-container" id="modal-hobby">
                             <label for="hobby">취미</label>
-                            <input type="text" name="hobby" id="" readonly>
+                            <input id="modal1-hobby" type="text" name="hobby" id="" readonly>
                         </div>
                         <div class="modal-info-input-container" id="modal-blog">
                             <label for="blog">블로그</label>
-                            <input type="text" name="blog" id="" readonly>
+                            <input id="modal1-blog" type="text" name="blog" id="" readonly>
                         </div>
                     </div>
                 </div>
                 <div id="modal-div2">
                     <div id="modal-div2-1">
                         <h2>장점과 단점</h2>
-                        <textarea rows="5" cols="50" placeholder="example sentences, Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex similique nihil laudantium, quod ea cupiditate" readonly ></textarea>
+                        <textarea id="modal1-s&w" rows="5" cols="50" readonly ></textarea>
                     </div>
                     <div id="modal-div2-2">
                         <h2>앞으로의 각오</h2>
-                        <textarea rows="5" cols="50" placeholder="example sentences, Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex similique nihil laudantium, quod ea cupiditate" readonly ></textarea>
+                        <textarea id="modal1-resolve" rows="5" cols="50" readonly ></textarea>
                     </div>
                     <div id="modal-div2-3">
                         <input id="people-modal-close" type="button" value="닫기">
@@ -282,11 +275,10 @@
                 </div>
                 <div id="modal2-div2">
                     <h2>Content</h2>
-                    <textarea id="messageTextArea" rows="5" cols="50" placeholder="example sentences, Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex similique nihil laudantium, quod ea cupiditate"></textarea>
+                    <textarea id="messageTextArea" rows="5" cols="50" placeholder="메세지를 입력해주세요."></textarea>
                 </div>
                 <div id="modal2-div3">
                     <input id="modal2Send" type="button" value="보내기">
-                    <input id="modal2Edit" type="button" value="수정하기">
                     <input id="modal2Close" type="button" value="닫기">
                 </div>
             </div>
