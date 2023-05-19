@@ -367,7 +367,9 @@ function display_edit_form(id, password) {
                 <div class="modal2-div1-div">
                     <label for="editDropdown1">누구에게 보낼까요?</label>
                     <select id="editDropdown1">
-                        <option value="" disabled selected hidden>${to_value}</option>
+                        <option value="" disabled selected hidden>
+                        선택하세요
+                        </option>
                         <option value="김환훈">김환훈</option>
                         <option value="이진솔">이진솔</option>
                         <option value="원유길">원유길</option>
@@ -377,7 +379,9 @@ function display_edit_form(id, password) {
                 <div class="modal2-div1-div">
                     <label for="editDropdown2">나는 누구?</label>
                     <select id="editDropdown2">
-                        <option value="" disabled selected hidden>${from_value}</option>
+                        <option value="" disabled selected hidden>
+                        선택하세요
+                        </option>
                         <option value="김환훈">김환훈</option>
                         <option value="이진솔">이진솔</option>
                         <option value="원유길">원유길</option>
@@ -387,7 +391,7 @@ function display_edit_form(id, password) {
             </div>
             <div id="modal2-div2">
                 <h2>수정할 내용을 입력하세요.</h2>
-                <textarea id="editMessageTextArea" rows="5" cols="50">${content_value}</textarea>
+                <textarea id="editMessageTextArea" placeholder="수정할 메세지를 입력하세요." rows="5" cols="50">${content_value}</textarea>
             </div>
             <div id="modal2-div3">
                 <input id="modal2Send" type="button" value="수정하기">
