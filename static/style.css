@@ -481,7 +481,7 @@ modal1 {
 .modal-container {
     max-width: 700px;
     overflow: hidden;
-    height: 62%;
+    height: 690px;
     position: fixed;
     top: 50%;
     left: 50%;
